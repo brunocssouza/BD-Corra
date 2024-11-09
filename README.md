@@ -6,58 +6,57 @@ Esse é um banco de dados com o objetivo de armazenar dados sobre o filme Corra 
 # Estrutura do Banco de Dados
 Esse banco de dados possui 5 relações. 
 
-**Tabela:** 
-contexto_sociocultural
+**Tabela:** contexto_sociocultural
 
 **Descrição:** Armazena a descrição do contexto cultural em que cada família está inserida.
 
 **Colunas:**
-- **origem**: Identifica a condição econômica do personagem. 
-- **classe_social**: A posição econômica do personagem/família na sociedade. 
-- **crenca**: Religião seguida pelo personagem/família. 
-- **fk_familia_familia_id**: Chave estrangeira da tabela família. 
-- **fk_personagem_personagem_id**: Chave estrangeira da tabela personagem.
+- **origem**: Determina as condições do local de origem do personagem.
+- **classe_social**: A condição econômica do personagem/família na sociedade. 
+- **crenca**: Religião seguida pelo personagem. 
+- **fk_familia_familia_id**: Chave estrangeira com o objetivo de apontar à que femilia o personagem pertence. 
+- **fk_personagem_personagem_id**: Chave estrangeira com o objetivo de apontar à que personagem está se referindo.
 
 ___
 **Tabela:** tratamento 
 
-**Descrição:** Tratamento aplicado pela família á um personagem. 
+**Descrição:** Fases do tratamento aplicado pela família á um personagem. 
 
 **Colunas:** 
-- **tratamento_id**: Identificador únio do tratamento. 
-- **tratamento_nome**: Nome da etapa do tratamento. 
-- **descricao**: Descrição da etapa do tratamento aplicado por um membro da família a um personagem.
+- **tratamento_id**: Identificador único das fases do tratamento. 
+- **tratamento_nome**: Nome da fase do tratamento.
+- **descricao**: Descrição da fase do tratamento.
 
 ___
 **Tabela:** familia
 
-**Descrição:** Usada para inserir uma família do filme.
+**Descrição:** Armazena as famílias do filme.
 
 **Colunas:**
-- **familia_id**: Identificador único família. 
-- **familia_nome**: Sobrenome da família do personagem.
+- **familia_id**: Identificador único da família. 
+- **familia_nome**: Sobrenome da família.
 
 ___
-**Tabela:** personagem 
+**Tabela:** personagem
 
-**Descrição:** Utilizada para inserir os dados dos personagens.
+**Descrição:** Armazena os dados de personagens atuantes.
  
 **Colunas:** 
-- **personagem_id**: Identificador único do personagem. 
+- **personagem_id**: Identificador único do personagem.
 - **personagem_nome**: Primeiro nome do personagem. 
-- **etnia**: Para classificar a etnia do personagem. 
-- **genero**: Identificador do gênero do personagem. 
-- **fk_tratamento_tratamento_id**: Chave estrangeira do tratamento aplicado no personagem, podendo ou não ser nulo.
+- **etnia**: Etnía do personagem.
+- **genero**: Gênero do personagem.
+- **fk_tratamento_tratamento_id**: Chave estrangeira da fase do tratamento aplicado no personagem (considere nulo caso o sujeito não esteja sob o tratamento).
 
 ___
-**Tabela:** MembroFamilia 
+**Tabela:** membrofamilia 
 
-**Descrição:** Identifica os membros de determinada família. 
+**Descrição:** Relaciona personagens com suas respectivas famílias e estados mentais. 
 
 **Colunas:** 
-- **estado_psicologico**: Identifica se o personagem é controlador ou espectador. 
+- **estado_psicologico**: Identifica o estado mental do personagem (Controlador, Espectador ou Normal).
 - **fk_personagem_personagem_id**: Chave estrangeira usada para identificar o personagem. 
-- **fk_familia_familia_id**: Chave estrangeira para identificar a família a qual o personagem pertence.
+- **fk_familia_familia_id**: Chave estrangeira para identificar a família à qual o personagem faz parte.
 
 # Diagrama ER
 <img src=".\ER-Logico.png">
