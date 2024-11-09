@@ -59,7 +59,7 @@ ___
 - **fk_familia_familia_id**: Chave estrangeira para identificar a família à qual o personagem faz parte.
 
 # Diagrama ER
-<img src=".\ER-Logico.pn">
+<img src=".\ER-Logico.png">
 
 # Instruções de Configuração
 ## 1. Instale o SGBD:
